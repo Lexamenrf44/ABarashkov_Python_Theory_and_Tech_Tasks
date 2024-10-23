@@ -1,7 +1,7 @@
 class HelpMethods:
 
     @staticmethod
-
+    # Function for fizz buzz with hardcoded elements within
     def fizz_buzz_hardcoded():
 
         # Loop through numbers from 0 to 50 (inclusive)
@@ -19,8 +19,7 @@ class HelpMethods:
                 print(num)  # If none of the conditions are met, print the number itself
 
     @staticmethod
-    # Define a function named fizz_buzz_parametrized
-    # This will contain the logic for FizzBuzz with dynamic parameters
+    # Function for fizz buzz with parametrized elements
     def fizz_buzz_parametrized(start, end):
 
         # Loop through numbers from start to end (inclusive)
@@ -38,8 +37,7 @@ class HelpMethods:
                 print(num)  # If none of the conditions are met, print the number itself
 
     @staticmethod
-    # Define a function named find_two_sum
-    # This will contain the logic for find_two_sum
+    # Function to find
     def find_two_sum_by_index(nums, target):
         """
 
@@ -68,6 +66,7 @@ class HelpMethods:
         return None
 
     @staticmethod
+    # Function to find the maximum value in the array
     def find_max_brute_force(array):
         max_value = array[0]  # Assume the first element is the largest for now
 
@@ -78,3 +77,23 @@ class HelpMethods:
                 max_value = array[i]  # Update max if we found a bigger number
 
         return max_value  # Return the largest number found
+
+    @staticmethod
+    # Function to find the difference between maximum and minimum elements in the array
+    def calculate_array_difference(array):
+        # Initialize the indices of minimum and maximum elements
+        index_of_minimum = 0
+        index_of_maximum = 0
+
+        # Traverse the array to find indices of the minimum and maximum values
+        for i in range(1, len(array)):
+            # Check if the current element is smaller than the current minimum
+            if array[i] < array[index_of_minimum]:
+                index_of_minimum = i
+
+            # Check if the current element is greater than the current maximum
+            if array[i] > array[index_of_maximum]:
+                index_of_maximum = i
+
+        # Return the difference between the maximum and minimum values
+        return array[index_of_maximum] - array[index_of_minimum]
