@@ -13,6 +13,6 @@ difference = HelpMethods.calculate_array_difference(array)
 # Assert results and print if passed / failed
 if difference == 8:
     assert True
-    print(f"Test passed! The difference between the max and min is: {difference}")
+    print(f"\nTest passed! The difference between the max and min is: {difference}")
 else:
     assert False, f"Test failed! The maximum number is: {difference}"

@@ -13,6 +13,6 @@ max_value = HelpMethods.find_max_brute_force(array)
 # Assert results and print if passed / failed
 if max_value == 9:
     assert True
-    print(f"Test passed! The maximum number is: {max_value}")
+    print(f"\nTest passed! The maximum number is: {max_value}")
 else:
     assert False, f"Test failed! The maximum number is: {max_value}"
