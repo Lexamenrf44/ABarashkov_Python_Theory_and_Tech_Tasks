@@ -3,14 +3,12 @@ from main.python.helpers.DataTest import array
 
 """
 
-Find the difference between its maximum and minimum elements in array calling a method
+Find the difference between its maximum and minimum elements in array
 
 """
 
-# Call the function method to find max int value
 difference = HelpMethods.calculate_array_difference(array)
 
-# Assert results and print if passed / failed
 if difference == 8:
     assert True
     print(f"\nTest passed! The difference between the max and min is: {difference}")
