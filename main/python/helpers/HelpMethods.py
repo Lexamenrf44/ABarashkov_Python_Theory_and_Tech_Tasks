@@ -143,3 +143,23 @@ class HelpMethods:
 
         # Return the difference between the maximum and minimum values
         return array[index_of_maximum] - array[index_of_minimum]
+
+    @staticmethod
+    # Function to find the repeated characters in the string
+    def find_repeated_characters(s: str) -> dict:
+
+        char_count = {}
+
+        # Iterate through each character in the string
+        for char in s:
+            # If character is already in the dictionary, increment its count
+            if char in char_count:
+                char_count[char] += 1
+            else:
+                # Otherwise, initialize it with count 1
+                char_count[char] = 1
+
+        # Filter the dictionary to return only characters that are repeated
+        repeated_chars = {char: count for char, count in char_count.items() if count > 1}
+
+        return repeated_chars
