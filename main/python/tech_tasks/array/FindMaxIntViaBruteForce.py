@@ -3,14 +3,12 @@ from main.python.helpers.DataTest import array
 
 """
 
-Find maximum value in array calling a method
+Find maximum value in array via brute force
 
 """
 
-# Call the function method to find max int value
 max_value = HelpMethods.find_max_brute_force(array)
 
-# Assert results and print if passed / failed
 if max_value == 9:
     assert True
     print(f"\nTest passed! The maximum number is: {max_value}")
