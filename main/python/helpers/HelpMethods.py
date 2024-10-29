@@ -1,3 +1,5 @@
+from typing import List
+
 class HelpMethods:
 
     @staticmethod
@@ -18,6 +20,7 @@ class HelpMethods:
             else:
                 print(num)  # If none of the conditions are met, print the number itself
 
+
     @staticmethod
     # Function for fizz buzz with parametrized elements
     def fizz_buzz_parametrized(start, end):
@@ -36,17 +39,11 @@ class HelpMethods:
             else:
                 print(num)  # If none of the conditions are met, print the number itself
 
+
     @staticmethod
     # Function to find
-    def find_two_sum_by_index(nums, target):
-        """
+    def find_two_sum_indices_hash_map(nums, target):
 
-        Find two indices of numbers in nums that add up to the target.
-        :param nums: List[int] - List of integers
-        :param target: int - Target sum
-        :return: List[int] - Indices of the two numbers that add up to target
-
-        """
         # Create a dictionary to store the number and its index
         num_map = {}  # Dictionary to store number and its index
 
@@ -64,6 +61,55 @@ class HelpMethods:
 
         # Return an empty list if no solution is found (shouldn't happen given problem constraints)
         return None
+
+
+    @staticmethod
+    def find_two_sum_indices_brute_force(nums: List[int], target: int) -> List[int]:
+
+        n = len(nums)
+
+        # Loop through each pair of indices in the list
+        for i in range(n):
+            for j in range(i + 1, n):  # Start j from i + 1 to avoid using the same element twice
+                if nums[i] + nums[j] == target:  # Check if the current pair sums to the target
+                    return [i, j]  # Return the indices of the two numbers
+
+        # Return None if no solution is found
+        return []
+
+    @staticmethod
+    def find_two_sum_two_pointer_approach(numbers: List[int], target: int) -> List[int]:
+
+        # `l` starts at the beginning of the list (left pointer)
+        l = 0
+
+        # `n` stores the length of the numbers list for easy reference
+        n = len(numbers)
+
+        # `r` starts at the end of the list (right pointer)
+        r = n - 1
+
+        # Continue the loop as long as the left pointer is less than the right pointer
+        while l < r:
+            # Calculate the sum of the elements at the two pointers
+            summ = numbers[l] + numbers[r]
+
+            # Check if the sum is equal to the target
+            if summ == target:
+                # If so, return the indices of the two numbers (1-based index)
+                return [l + 1, r + 1]
+
+            # If the sum is less than the target, move the left pointer to the right to increase the sum
+            elif summ < target:
+                l += 1
+
+            # If the sum is greater than the target, move the right pointer to the left to decrease the sum
+            else:
+                r -= 1
+
+        # If no pair is found that sums to the target, return an empty list
+        return []
+
 
     @staticmethod
     # Function to find the maximum value in the array
