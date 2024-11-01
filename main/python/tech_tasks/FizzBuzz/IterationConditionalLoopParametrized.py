@@ -1,5 +1,6 @@
 from main.python.helpers.FizzBuzzMethods import FizzBuzzMethods
 
+
 """
 Describe a method that will output number input by user as parameters:
 - all multiples of 3 change to Fizz,

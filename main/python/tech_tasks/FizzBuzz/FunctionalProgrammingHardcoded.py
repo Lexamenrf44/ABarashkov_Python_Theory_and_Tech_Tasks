@@ -1,5 +1,6 @@
 from main.python.helpers.FizzBuzzMethods import FizzBuzzMethods
 
+
 """
 Describe a method that will output numbers from 0 to 50:
 - multiples of 3 change to Fizz,
