@@ -1,23 +1,21 @@
 from collections import Counter
+from itertools import count
+from typing import List
 
 
 class HelpMethods:
 
     @staticmethod
-    def find_max_int_brute_force(array):
-        max_value = array[0]
-        for num in array:
-            if num > max_value:
-                max_value = num
-        return max_value
+    def find_count_with_condition(array: List[int], target: int) -> int:
 
+        return sum(1 for num in array if num >= target)
 
     @staticmethod
-    def calculate_array_difference(array):
-        index_of_minimum = min(array)
-        index_of_maximum = max(array)
+    def find_min_max_integer_range(array):
+        min_value = min(array)
+        max_value = max(array)
 
-        return index_of_maximum - index_of_minimum
+        return max_value - min_value
 
     @staticmethod
     def find_repeated_characters_hash_map(s: str) -> dict:
