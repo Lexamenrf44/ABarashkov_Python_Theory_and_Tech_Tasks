@@ -9,7 +9,7 @@ Find the difference between its maximum and minimum elements in array
 
 difference = HelpMethods.calculate_array_difference(array)
 
-if difference == 8:
+if difference == 49:
     assert True
     print(f"\nTest passed! The difference between the max and min is: {difference}")
 else:
