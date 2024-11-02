@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional, Tuple
 
 
 class FindTwoSumMethods:
@@ -10,6 +10,15 @@ class FindTwoSumMethods:
                 if num1 + num2 == target:
                     return [i, j]
         return []
+
+
+    @staticmethod
+    def find_two_sum_integers_brute_force(nums: List[int], target: int) -> Optional[Tuple[int, int]]:
+        for i, num1 in enumerate(nums):
+            for j, num2 in enumerate(nums[i + 1:], start=i + 1):
+                if num1 + num2 == target:
+                    return (num1, num2)
+        return None
 
 
     @staticmethod
@@ -26,18 +35,29 @@ class FindTwoSumMethods:
 
 
     @staticmethod
+    def find_two_sum_integers_hash_map(nums: List[int], target: int) -> Optional[Tuple[int, int]]:
+
+        num_map = {}
+
+        for num in nums:
+            complement = target - num
+            if complement in num_map:
+                return complement, num
+            num_map[num] = True
+        return None
+
+
+    @staticmethod
     def find_two_sum_two_pointer_approach(nums: List[int], target: int) -> List[int]:
 
-        l = 0
-        n = len(nums)
-        r = n - 1
+        left, right = 0, len(nums) - 1
 
-        while l < r:
-            summ = nums[l] + nums[r]
-            if summ == target:
-                return [l + 1, r + 1]
-            elif summ < target:
-                l += 1
+        while left < right:
+            current_sum = nums[left] + nums[right]
+            if current_sum == target:
+                return [left + 1, right + 1]
+            elif current_sum < target:
+                left += 1
             else:
-                r -= 1
+                right -= 1
         return []
