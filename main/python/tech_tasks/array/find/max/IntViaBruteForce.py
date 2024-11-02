@@ -7,7 +7,7 @@ Find maximum value in array via brute force
 
 """
 
-max_value = HelpMethods.find_max_brute_force(array)
+max_value = HelpMethods.find_max_int_brute_force(array)
 
 if max_value == 9:
     assert True
